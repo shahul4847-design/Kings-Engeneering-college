@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | KINGS ENGINEERING COLLEGE</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f0f2f5;
+    }
+
+    /* ===== Header ===== */
+    header {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      padding: 15px 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    header .logo-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      animation: slideDown 1s ease-out;
+    }
+
+    header .logo-header img {
+      height: 60px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    header h1, header p {
+      margin: 0;
+      text-align: center;
+    }
+
+    header p {
+      font-size: 0.9rem;
+      color: #d1d1d1;
+    }
+
+    @keyframes slideDown {
+      0% { transform: translateY(-50px); opacity:0; }
+      100% { transform: translateY(0); opacity:1; }
+    }
+
+    /* ===== Navigation ===== */
+    nav {
+      text-align: center;
+      margin-top: 10px;
+      animation: fadeIn 1.2s ease forwards;
+      opacity: 0;
+    }
+
+    nav a {
+      color: #ffd700;
+      text-decoration: none;
+      margin: 0 18px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 0;
+      background: #ffd700;
+      transition: 0.3s;
+      margin-top: 5px;
+      border-radius: 2px;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* ===== Contact Section ===== */
+    .contact-section {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 40px 25px;
+      background: linear-gradient(145deg, #e0eafc, #cfdef3);
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      animation: fadeInCard 1s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeInCard {
+      to { opacity: 1; }
+    }
+
+    .contact-section h2 {
+      text-align: center;
+      color: #004aad;
+      margin-bottom: 25px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #0066ff;
+      box-shadow: 0 0 8px rgba(0,102,255,0.3);
+    }
+
+    button {
+      background-color: #004aad;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      margin-top: 10px;
+      width: 100%;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #0066ff;
+      transform: scale(1.03);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+      color: #ffd700;
+      margin-top: 40px;
+      font-weight: 500;
+    }
+
+    @media(max-width: 768px) {
+      .contact-section {
+        padding: 30px 20px;
+      }
+    }
+
+    /* ===== Optional contact info display ===== */
+    .contact-info {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.95rem;
+      color: #004aad;
+    }
+
+    .contact-info a {
+      color: #0066ff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="logo-header">
+      <img src="kings.png" alt="College Logo">
+      <div>
+        <h1>KINGS ENGINEERING COLLEGE</h1>
+        <p>Department Portal</p>
+      </div>
+    </div>
+    <nav>
+    <ul>
+    <li>  <a href="index.html">Home</a></li>  
+    <li>  <a href="feedback.html">Feedback</a></li>
+   <li>     <a href="leave.html">Leave Letter</a></li>
+   <li>     <a href="info.html">Information</a></li>
+    <li>    <a href="contact.html">Contact</a></li>
+</ul>
+
+    </nav>
+  </header>
+
+  <!-- ===== Contact Section ===== -->
+  <section class="contact-section">
+    <h2>📩 Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="button" onclick="sendMessage()">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <p>Email: <a href="mailto:shahul4847@gmail.com">shahul4847@gmail.com</a></p>
+      <p>Phone: <a href="tel:7538850128">7538850128</a></p>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>© 2025 KINGS ENGINEERING COLLEGE | Created by Shahul</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    emailjs.init("YOUR_PUBLIC_KEY"); // replace with your EmailJS public key
+
+    function sendMessage() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      if(name && email && message){
+        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+          name: name,
+          email: email,
+          message: message
+        }).then(() => {
+          alert("✅ Message sent successfully!");
+          document.getElementById("contactForm").reset();
+        }, (error) => {
+          alert("❌ Failed to send message. Try again!");
+          console.log(error);
+        });
+      } else {
+        alert("⚠️ Please fill in all fields!");
+      }
+    }
+  </script>
+
+</body>
+</html>

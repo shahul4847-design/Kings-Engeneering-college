@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leave Letter | KINGS ENGINEERING COLLEGE</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f0f2f5;
+    }
+
+    /* ===== Header ===== */
+    header {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      padding: 15px 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    header .logo-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      animation: slideDown 1s ease-out;
+    }
+
+    header .logo-header img {
+      height: 60px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    header h1, header p {
+      margin: 0;
+      text-align: center;
+    }
+
+    header p {
+      font-size: 0.9rem;
+      color: #d1d1d1;
+    }
+
+    @keyframes slideDown {
+      0% { transform: translateY(-50px); opacity:0; }
+      100% { transform: translateY(0); opacity:1; }
+    }
+
+    /* ===== Navigation ===== */
+    nav {
+      text-align: center;
+      margin-top: 10px;
+      animation: fadeIn 1.2s ease forwards;
+      opacity: 0;
+    }
+
+    nav a {
+      color: #ffd700;
+      text-decoration: none;
+      margin: 0 18px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 0;
+      background: #ffd700;
+      transition: 0.3s;
+      margin-top: 5px;
+      border-radius: 2px;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* ===== Leave Letter Section ===== */
+    .leave-section {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 40px 25px;
+      background: linear-gradient(145deg, #e0eafc, #cfdef3);
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      animation: fadeInCard 1s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeInCard {
+      to { opacity: 1; }
+    }
+
+    .leave-section h2 {
+      text-align: center;
+      color: #004aad;
+      margin-bottom: 25px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: #0066ff;
+      box-shadow: 0 0 8px rgba(0,102,255,0.3);
+    }
+
+    button {
+      background-color: #004aad;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      margin-top: 10px;
+      width: 100%;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #0066ff;
+      transform: scale(1.03);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+      color: #ffd700;
+      margin-top: 40px;
+      font-weight: 500;
+    }
+
+    @media(max-width: 768px) {
+      .leave-section {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="logo-header">
+      <img src="kings.png" alt="College Logo">
+      <div>
+        <h1>KINGS ENGINEERING COLLEGE</h1>
+        <p>Department Portal</p>
+      </div>
+    </div>
+    <nav>
+      <ul>
+    <li>  <a href="index.html">Home</a></li>  
+    <li>  <a href="feedback.html">Feedback</a></li>
+   <li>     <a href="leave.html">Leave Letter</a></li>
+   <li>     <a href="info.html">Information</a></li>
+    <li>    <a href="contact.html">Contact</a></li>
+</ul>
+
+    </nav>
+  </header>
+
+ <!-- ===== Leave Letter Section ===== -->
+<section class="leave-section">
+  <h2>📝 Apply for Leave</h2>
+  <form id="leaveForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <input type="text" id="roll" placeholder="Roll Number" required>
+    <input type="text" id="fromDate" placeholder="From Date (DD/MM/YYYY)" required>
+    <input type="text" id="toDate" placeholder="To Date (DD/MM/YYYY)" required>
+    <textarea id="reason" rows="4" placeholder="Reason for Leave..." required></textarea>
+    <button type="button" onclick="sendLeave()">Submit Leave</button>
+  </form>
+</section>
+
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>© 2025 KINGS ENGINEERING COLLEGE | Created by Shahul</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    emailjs.init("UotHceUTSmDss6-tZ"); // replace with your EmailJS public key
+
+    function sendLeave() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const roll = document.getElementById("roll").value;
+      const fromDate = document.getElementById("fromDate").value;
+      const toDate = document.getElementById("toDate").value;
+      const reason = document.getElementById("reason").value;
+
+      if(name && email && roll && fromDate && toDate && reason){
+        emailjs.send("service_pbltooh", "template_ix6y5r8", {
+          name: name,
+          email: email,
+          roll: roll,
+          from_date: fromDate,
+          to_date: toDate,
+          reason: reason
+        }).then(() => {
+          alert("✅ Leave request submitted successfully!");
+          document.getElementById("leaveForm").reset();
+        }, (error) => {
+          alert("❌ Failed to submit leave. Try again!");
+          console.log(error);
+        });
+      } else {
+        alert("⚠️ Please fill in all fields!");
+      }
+    }
+  </script>
+
+</body>
+</html>
