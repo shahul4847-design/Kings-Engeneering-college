@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | KINGS ENGINEERING COLLEGE</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; margin:0; background:#f0f2f5; }
+
+    header {
+      background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+      color:white; padding:15px 0; box-shadow:0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    header .logo-header { display:flex; align-items:center; justify-content:center; gap:15px; }
+    header .logo-header img { height:60px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.3);}
+    header h1,p { margin:0; text-align:center; }
+    header p { font-size:0.9rem; color:#d1d1d1; }
+
+    nav { text-align:center; margin-top:10px; }
+    nav ul { list-style:none; padding:0; display:flex; justify-content:center; gap:15px; }
+    nav a { color:#ffd700; text-decoration:none; font-weight:600; font-size:1.1rem; position:relative;}
+    nav a::after { content:''; display:block; height:3px; width:0; background:#ffd700; transition:0.3s; margin-top:5px; border-radius:2px; }
+    nav a:hover::after { width:100%; }
+
+    .contact-section { max-width:600px; margin:60px auto; padding:40px 25px; background:linear-gradient(145deg,#e0eafc,#cfdef3); border-radius:20px; box-shadow:0 8px 25px rgba(0,0,0,0.15);}
+    .contact-section h2 { text-align:center; color:#004aad; margin-bottom:25px; }
+    input,textarea { width:100%; padding:12px; margin:12px 0; border-radius:10px; border:1px solid #ccc; font-size:1rem; outline:none; }
+    input:focus,textarea:focus { border-color:#0066ff; box-shadow:0 0 8px rgba(0,102,255,0.3); }
+    button { background:#004aad; color:white; padding:12px 20px; border:none; border-radius:10px; cursor:pointer; font-weight:600; margin-top:10px; width:100%; transition:0.3s; }
+    button:hover { background:#0066ff; transform:scale(1.03); }
+
+    #contactOutput { display:none; margin-top:40px; background:white; padding:30px; border-radius:15px; box-shadow:0 4px 20px rgba(0,0,0,0.1); text-align:left; }
+    #contactContent { font-family:'Times New Roman',serif; line-height:1.7; color:#222; text-align:left; }
+
+    footer { text-align:center; padding:25px; background:linear-gradient(90deg,#0f2027,#203a43,#2c5364); color:#ffd700; margin-top:40px; font-weight:500; }
+    @media(max-width:768px){ .contact-section{padding:30px 20px;} }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-header">
+    <img src="kings.png" alt="College Logo">
+    <div>
+      <h1>KINGS ENGINEERING COLLEGE</h1>
+      <p>Department Portal</p>
+    </div>
+  </div>
+
+</header>
+
+<section class="contact-section">
+  <h2>📩 Contact Us</h2>
+  <form id="contactForm">
+    <input type="text" id="c_name" placeholder="Your Name" required>
+    <input type="email" id="c_email" placeholder="Your Email" required>
+    <textarea id="c_message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="button" onclick="submitContact()">Send Message</button>
+  </form>
+
+  <div id="contactOutput">
+    <h3 style="text-align:center; color:#004aad;">Message Sent</h3>
+    <div id="contactContent"></div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 KINGS ENGINEERING COLLEGE | Created by Shahul</p>
+</footer>
+
+<script>
+  const webAppURL = "https://script.google.com/macros/s/AKfycbwKAHwHxfK3LYNtu5CZZ85mz45-R3lJak3Ji1a_Y4_6sFvSAs-AO3OAz5i8MLdNRL-Q/exec";
+
+  function submitContact() {
+    const name = document.getElementById("c_name").value;
+    const email = document.getElementById("c_email").value;
+    const message = document.getElementById("c_message").value;
+
+    if (!name || !email || !message) {
+      alert("⚠️ Please fill all fields!");
+      return;
+    }
+
+    // Generate message preview
+    const contactHTML = `
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Message:</strong><br>${message}</p>
+    `;
+    document.getElementById("contactContent").innerHTML = contactHTML;
+    document.getElementById("contactOutput").style.display = "block";
+
+    // Send to Google Apps Script
+    fetch(webAppURL, {
+      method: "POST",
+      body: JSON.stringify({name, email, message}),
+      headers: { "Content-Type": "application/json" }
+    })
+    .then(res => res.json())
+    .then(result => {
+      if(result.status === "success"){
+        alert("✅ Message sent successfully!");
+        document.getElementById("contactForm").reset();
+      } else {
+        alert("⚠️ Submission failed: " + result.message);
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      alert("❌ Failed to send message. Check console for errors.");
+    });
+  }
+</script>
+
+</body>
+</html>
