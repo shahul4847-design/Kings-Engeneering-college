@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Information | KINGS ENGINEERING COLLEGE</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #ffd700, #004aad);
+      background-size: 400% 400%;
+      animation: gradientFlow 10s ease infinite;
+      color: #001f3f;
+    }
+
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      text-align: center;
+      padding: 25px 15px;
+      background: linear-gradient(135deg, #ffd700, #004aad);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+      margin: 5px 0;
+      font-size: 2rem;
+      color: #fff;
+      text-shadow: 0 0 10px #fff, 0 0 20px #ffd700;
+      animation: glow 3s ease-in-out infinite alternate;
+    }
+
+    header p {
+      margin: 0;
+      color: #fffde7;
+      font-size: 1rem;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #fff, 0 0 20px #ffd700; }
+      to { text-shadow: 0 0 20px #fff, 0 0 30px #ffd700; }
+    }
+
+    nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 18px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 0;
+      background: #fff;
+      transition: 0.3s;
+      margin-top: 5px;
+      border-radius: 2px;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .info-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 60px 20px;
+    }
+
+    .info-card {
+      background: linear-gradient(135deg, #fffde7, #ffd700);
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      padding: 25px;
+      text-align: center;
+      width: 280px;
+      animation: fadeUp 1s ease forwards;
+      opacity: 0;
+      color: #001f3f;
+      transition: all 0.4s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 0 25px rgba(0,0,0,0.5);
+    }
+
+    .info-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .info-card p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .info-btn {
+      background: linear-gradient(90deg, #004aad, #ffd700);
+      color: #fff;
+      padding: 12px 18px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      width: 100%;
+      margin-top: 15px;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .info-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 25px rgba(0, 74, 173, 0.8);
+      background: linear-gradient(90deg, #ffd700, #004aad);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #fff;
+      background: linear-gradient(135deg, #ffd700, #004aad);
+      margin-top: 40px;
+      font-weight: 500;
+    }
+
+    @media(max-width: 768px) {
+      .info-card { width: 90%; }
+      nav a { display: inline-block; margin: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>KINGS ENGINEERING COLLEGE</h1>
+    <p>Department Portal</p>
+   
+  </header>
+
+  <section class="info-section">
+    <div class="info-card">
+      <h3>🗓 Academic Calendar</h3>
+      <p>Stay updated with exam schedules, holidays, and semester events.</p>
+      <button class="info-btn" onclick="openDrive('https://drive.google.com/drive/folders/1Vhw4jOxWXL-ZBL9Ig7KGrTJOlC4lhmMj?usp=drive_link')">📂 View Calendar</button>
+    </div>
+
+    <div class="info-card">
+      <h3>📢 Latest Announcements</h3>
+      <p>Check out the latest notices and events happening in our department.</p>
+      <button class="info-btn" onclick="openDrive('https://drive.google.com/drive/folders/16Ofus97wxmq64Fq4r6pm3l8sLleNKzzh?usp=drive_link')">📂 View Announcements</button>
+    </div>
+
+    <div class="info-card">
+      <h3>🏆 Achievements</h3>
+      <p>Know about student and faculty achievements and awards.</p>
+      <button class="info-btn" onclick="openDrive('https://drive.google.com/drive/folders/170HIDEM1RmrM8Ewgt6_scOMGpr9ISzk8?usp=drive_link')">📂 View Achievements</button>
+    </div>
+
+    <div class="info-card">
+      <h3>📅 Time Table</h3>
+      <p>View the current semester’s class and exam timetable.</p>
+      <button class="info-btn" onclick="openDrive('https://drive.google.com/drive/folders/1H4oJl1LKweZxJUmPTfrvdY1E6B6afOHV?usp=drive_link')">📂 View Time Table</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 KINGS ENGINEERING COLLEGE | Created by Shahul</p>
+  </footer>
+
+  <script>
+    function openDrive(link) {
+      window.open(link, '_blank');
+    }
+
+    // Animate cards with delay
+    const cards = document.querySelectorAll('.info-card');
+    cards.forEach((card, index) => {
+      card.style.animationDelay = `${index * 0.2}s`;
+    });
+  </script>
+
+</body>
+</html>

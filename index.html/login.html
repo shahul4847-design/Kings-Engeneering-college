@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KINGS ENGINEERING COLLEGE | Login</title>
+<style>
+  /* ===== Full Page Login Overlay ===== */
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login-container {
+    background: linear-gradient(145deg, #e0eafc, #cfdef3);
+    padding: 40px 30px;
+    border-radius: 25px;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+    text-align: center;
+    width: 320px;
+  }
+
+  .login-container h1 {
+    color: #004aad;
+    margin-bottom: 25px;
+  }
+
+  .login-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+
+  .login-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #004aad;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .login-container button:hover {
+    background-color: #2563eb;
+    transform: scale(1.05);
+  }
+
+  .error-msg {
+    color: red;
+    margin-top: 10px;
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="login-container">
+  <h1>🔒 KINGS Portal</h1>
+  <input type="password" id="password" placeholder="Enter Password">
+  <button onclick="checkPassword()">Login</button>
+  <div class="error-msg" id="error"></div>
+</div>
+
+<script>
+  function checkPassword() {
+    const pass = document.getElementById('password').value;
+    const error = document.getElementById('error');
+
+    if(pass === "Kings2025") {
+      window.location.href = "index.html"; // redirect to home page
+    } else {
+      error.textContent = "❌ Incorrect password! Try again.";
+    }
+  }
+</script>
+
+</body>
+</html>
