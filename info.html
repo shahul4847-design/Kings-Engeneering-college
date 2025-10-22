@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Information | KINGS ENGINEERING COLLEGE</title>
+  <style>
+    /* 🌌 Background */
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: radial-gradient(circle at top left, #140030, #0a0020, #000010);
+      color: #fff;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255, 0, 150, 0.4), transparent 70%);
+      top: -100px;
+      left: -100px;
+      filter: blur(150px);
+      animation: moveGlow 12s infinite alternate ease-in-out;
+      z-index: 0;
+    }
+
+    @keyframes moveGlow {
+      0% { top: -100px; left: -100px; }
+      100% { top: 60%; left: 70%; }
+    }
+
+    /* 🌈 Header */
+    header {
+      text-align: center;
+      padding: 25px 15px;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 20px rgba(255,255,255,0.1);
+      border-bottom: 2px solid rgba(255,255,255,0.2);
+      z-index: 2;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 5px 0;
+      font-size: 1.8rem;
+      color: #e0e0e0;
+      letter-spacing: 1px;
+            animation: glow 3s ease-in-out infinite alternate;
+    }
+
+    header p {
+      margin: 0;
+      color: #e0e0e0;
+      font-size: 1rem;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff77ff, 0 0 20px #7f00ff; }
+      to { text-shadow: 0 0 20px #b56bff, 0 0 40px #ff00c8; }
+    }
+
+    /* 🔹 Navigation */
+    nav {
+      text-align: center;
+      margin: 20px auto;
+      max-width: 900px;
+      z-index: 2;
+      position: relative;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #FFD700;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin: 0 15px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: #ff7ce5;
+      text-shadow: 0 0 10px #ff7ce5, 0 0 20px #b56bff;
+    }
+
+    /* ✨ Main Box */
+    main {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 25px;
+      box-shadow: 0 0 25px rgba(255, 0, 255, 0.1);
+      backdrop-filter: blur(8px);
+      text-align: center;
+      margin: 40px auto;
+      max-width: 900px;
+      padding: 40px 30px;
+      z-index: 2;
+      position: relative;
+    }
+
+    main h2 {
+      color: #ff77ff;
+      text-shadow: 0 0 20px #a45cff, 0 0 40px #ff00c8;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      animation: glow 3s ease-in-out infinite alternate;
+    }
+
+    .info-card {
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 20px;
+      padding: 25px 20px;
+      text-align: center;
+      width: 280px;
+      margin: 15px;
+      display: inline-block;
+      box-shadow: 0 4px 20px rgba(255,0,255,0.2);
+      transition: all 0.4s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 0, 255, 0.6);
+    }
+
+    .info-card h3 {
+      color: #ff93ff;
+      margin-bottom: 10px;
+    }
+
+    .info-card p {
+      color: #f5f5f5;
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    .info-btn {
+      background: linear-gradient(90deg, #4b0082, #ff00ff, #b400ff);
+      color: #fff;
+      padding: 12px 18px;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      width: 100%;
+      box-shadow: 0 0 15px rgba(255,0,255,0.4);
+      transition: all 0.3s ease;
+    }
+
+    .info-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 25px rgba(255,0,255,0.7), 0 0 40px rgba(138,43,226,0.5);
+    }
+
+    /* 👣 Footer */
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #ccc;
+      font-size: 0.9rem;
+      margin-top: 40px;
+      background: rgba(0,0,0,0.3);
+      box-shadow: 0 -5px 20px rgba(255,0,255,0.1);
+    }
+
+    @media(max-width: 768px) {
+      .info-card { width: 90%; display: block; margin: 15px auto; }
+      nav a { display: inline-block; margin: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>KINGS ENGINEERING COLLEGE</h1>
+    <p>Department Portal - Information</p>
+  </header>
+
+
+
+  <main>
+    <h2>🗓 Academic & Department Information</h2>
+
+    <div class="info-card">
+      <h3>📚 Academic Calendar</h3>
+      <p>Stay updated with exam schedules, holidays, and semester events.</p>
+      <button class="info-btn" onclick="openDrive('https://drive.google.com/drive/folders/1Vhw4jOxWXL-ZBL9Ig7KGrTJOlC4lhmMj?usp=drive_link')">📂 View Calendar</button>
+    </div>
+
+    <div class="info-card">
+      <h3>📢 Latest Announcements</h3>
+      <p>Check out the latest notices and events happening in our department.</p>
+      <button class="info-btn" onclick="openDrive('https://drive.google.com/drive/folders/16Ofus97wxmq64Fq4r6pm3l8sLleNKzzh?usp=drive_link')">📂 View Announcements</button>
+    </div>
+
+    <div class="info-card">
+      <h3>🏆 Achievements</h3>
+      <p>Know about student and faculty achievements and awards.</p>
+      <button class="info-btn" onclick="openDrive('https://drive.google.com/drive/folders/170HIDEM1RmrM8Ewgt6_scOMGpr9ISzk8?usp=drive_link')">📂 View Achievements</button>
+    </div>
+
+    <div class="info-card">
+      <h3>📅 Time Table</h3>
+      <p>View the current semester’s class and exam timetable.</p>
+      <button class="info-btn" onclick="openDrive('https://drive.google.com/drive/folders/1H4oJl1LKweZxJUmPTfrvdY1E6B6afOHV?usp=drive_link')">📂 View Time Table</button>
+    </div>
+
+  </main>
+
+  <footer>
+    © 2025 KINGS ENGINEERING COLLEGE | Created by Shahul
+  </footer>
+
+  <script>
+    function openDrive(link) {
+      window.open(link, '_blank');
+    }
+  </script>
+</body>
+</html>
