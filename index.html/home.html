@@ -1,130 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login | KINGS ENGINEERING COLLEGE</title>
-<style>
-  /* 🌌 Background */
-  body {
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    background: radial-gradient(circle at top left, #140030, #0a0020, #000010);
-    color: #fff;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-x: hidden;
-    position: relative;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Central Material Library</title>
+  <style>
+    /* 🌌 Background */
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: radial-gradient(circle at top left, #140030, #0a0020, #000010);
+      color: #fff;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
 
-  body::before {
-    content: "";
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(255, 0, 150, 0.4), transparent 70%);
-    top: -100px;
-    left: -100px;
-    filter: blur(150px);
-    animation: moveGlow 12s infinite alternate ease-in-out;
-    z-index: 0;
-  }
+    body::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255, 0, 150, 0.4), transparent 70%);
+      top: -100px;
+      left: -100px;
+      filter: blur(150px);
+      animation: moveGlow 12s infinite alternate ease-in-out;
+      z-index: 0;
+    }
 
-  @keyframes moveGlow {
-    0% { top: -100px; left: -100px; }
-    100% { top: 60%; left: 70%; }
-  }
+    @keyframes moveGlow {
+      0% { top: -100px; left: -100px; }
+      100% { top: 60%; left: 70%; }
+    }
 
-  /* ✨ Login Box */
-  .login-box {
-    position: relative;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
-    padding: 40px 30px;
-    border-radius: 25px;
-    box-shadow: 0 0 25px rgba(255,0,255,0.2);
-    text-align: center;
-    z-index: 2;
-    width: 90%;
-    max-width: 400px;
-  }
+    /* ✨ Navbar */
+    nav {
+      background: linear-gradient(90deg, #2b005f, #590080, #8a00d4);
+      box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+      border-radius: 15px;
+      padding: 15px 25px;
+      margin: 20px auto;
+      position: relative;
+      max-width: 900px;
+      z-index: 2;
+    }
 
-  .login-box h1 {
-    margin-bottom: 20px;
-    font-size: 2rem;
-    color: #ff77ff;
-    text-shadow: 0 0 20px #a45cff, 0 0 40px #ff00c8;
-    animation: glow 3s ease-in-out infinite alternate;
-  }
+    nav ol {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      padding: 0;
+      margin: 0;
+    }
 
-  @keyframes glow {
-    from { text-shadow: 0 0 10px #ff77ff, 0 0 20px #7f00ff; }
-    to { text-shadow: 0 0 20px #b56bff, 0 0 40px #ff00c8; }
-  }
+    nav ol li a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      position: relative;
+    }
 
-  input[type="password"] {
-    width: 80%;
-    padding: 12px;
-    border-radius: 12px;
-    border: none;
-    margin: 15px 0;
-    font-size: 1rem;
-    text-align: center;
-    outline: none;
-    box-shadow: 0 0 10px rgba(255,0,255,0.3);
-  }
+    nav ol li a:hover {
+      color: #ff7ce5;
+      text-shadow: 0 0 10px #ff7ce5, 0 0 20px #b56bff;
+    }
 
-  .glow-btn {
-    background: linear-gradient(90deg, #4b0082, #ff00ff, #b400ff);
-    border: none;
-    border-radius: 15px;
-    color: white;
-    padding: 12px 25px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 0 15px rgba(255,0,255,0.3);
-    transition: all 0.3s ease;
-  }
+    /* 📱 Mobile Navbar */
+    @media (max-width: 768px) {
+      nav ol {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
 
-  .glow-btn:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 25px rgba(255,0,255,0.7), 0 0 40px rgba(138,43,226,0.5);
-  }
+    /* 🌈 Header Title */
+    h1 {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 2.8rem;
+      color: #ff77ff;
+      text-shadow: 0 0 20px #a45cff, 0 0 40px #ff00c8;
+      animation: glow 3s ease-in-out infinite alternate;
+    }
+/* 🌈 Header Title */
+    h2 {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 2.8rem;
+      color: #ff77ff;
+      text-shadow: 0 0 20px #a45cff, 0 0 40px #ff00c8;
+      animation: glow 3s ease-in-out infinite alternate;
+    }
 
-  .error-msg {
-    color: #ff5555;
-    margin-top: 10px;
-    font-weight: 600;
-    display: none;
-  }
-</style>
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff77ff, 0 0 20px #7f00ff; }
+      to { text-shadow: 0 0 20px #b56bff, 0 0 40px #ff00c8; }
+    }
+
+    /* 🪩 Main Box */
+    main {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 25px;
+      box-shadow: 0 0 25px rgba(255, 0, 255, 0.1);
+      backdrop-filter: blur(8px);
+      text-align: center;
+      margin: 40px auto;
+      max-width: 900px;
+      padding: 40px 30px;
+      z-index: 2;
+    }
+
+    main p {
+      font-size: 1.15rem;
+      color: #f0e6ff;
+      margin-bottom: 30px;
+    }
+
+    /* 🔮 Feature Descriptions */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-bottom: 35px;
+    }
+
+    .feature {
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 15px;
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .feature:hover {
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+      transform: translateY(-5px);
+    }
+
+    .feature h3 {
+      color: #ff93ff;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      font-size: 1rem;
+      color: #d8cfff;
+    }
+
+    /* 💎 Buttons */
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .glow-btn {
+      background: linear-gradient(90deg, #4b0082, #ff00ff, #b400ff);
+      border: none;
+      border-radius: 15px;
+      color: white;
+      padding: 15px 25px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+      transition: all 0.3s ease;
+      min-width: 200px;
+    }
+
+    .glow-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 25px rgba(255, 0, 255, 0.7), 0 0 40px rgba(138, 43, 226, 0.5);
+    }
+
+    /* 👣 Footer */
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #ccc;
+      font-size: 0.9rem;
+      margin-top: 80px;
+      background: rgba(0, 0, 0, 0.3);
+      box-shadow: 0 -5px 20px rgba(255, 0, 255, 0.1);
+    }
+  </style>
 </head>
 <body>
+ <h1>Welcome to Department Portal</h1>
 
-<div class="login-box">
-  <h1>Enter Password</h1>
-  <input type="password" id="password" placeholder="Password here">
-  <br>
-  <button class="glow-btn" onclick="checkPassword()">Enter</button>
-  <p class="error-msg" id="error-msg">Incorrect Password!</p>
-</div>
 
-<script>
-  const correctPassword = "kings2025"; // 🔐 Set your single password here
+  <main>
+<p>Empowering Students • Enabling Excellence • Embracing Innovation</p>
+    <ul>
+      <li>📚 Access all academic resources with ease</li>
+      <li>🧠 Explore knowledge beyond the classroom</li>
+      <li>🔔 Stay updated with important information</li>
+      <li>❤️ Designed with care for every student</li>
+    </ul>
 
-  function checkPassword() {
-    const input = document.getElementById('password').value;
-    const errorMsg = document.getElementById('error-msg');
-    if(input === correctPassword) {
-      window.location.href = "index.html"; // redirect to home page
-    } else {
-      errorMsg.style.display = "block";
-    }
-  }
-</script>
+    <p>
+      Explore the digital hub of <strong>KINGS Engineering College</strong> — your all-in-one platform 
+      for learning materials, lab resources, and academic updates. Designed for students who 
+      believe in smart access and simplicity.
+    </p>
+<div class="button-container">
+      <button class="glow-btn" onclick="location.href='library.html'">📘 Go to Library</button>
+      <button class="glow-btn" onclick="location.href='info.html'">🗓️ View Informations</button>
+      <button class="glow-btn" onclick="location.href='about.html'">💡 About Page</button>
+    </div>
+  </main>
 
+
+    <div class="features">
+      <div class="feature">
+        <h3>📘 Material Library</h3>
+        <p>Access study materials, PDFs, and lab manuals organized by subject and department.</p>
+      </div>
+
+      <div class="feature">
+        <h3>🗓️ Information</h3>
+        <p>Stay updated with schedules, announcements, and important academic notifications.</p>
+      </div>
+
+      <div class="feature">
+        <h3>💡 About</h3>
+        <p>Learn about the vision behind this project and how it supports student learning.</p>
+      </div>
+    </div>
+
+   
+  </main>
+
+  <footer>
+    © 2025 Central Material Library | Created with 💜 by Shahul & GPT-5
+  </footer>
 </body>
 </html>
