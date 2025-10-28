@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "0d96f2fe-26da-4d23-8284-603d76356d72",
+    });
+  });
+</script>
   
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RYCY6THDJ0"></script>
@@ -215,7 +224,7 @@
       <li>📚 Access all academic resources with ease</li>
       <li>🧠 Explore knowledge beyond the classroom</li>
       <li>🔔 Stay updated with important information</li>
-      <li>❤️ Designed with care for every student</li>
+      <li❤️ Designed with care for every student</li>
     </ul>
 
     <p>
@@ -225,7 +234,7 @@
     </p>
 <div class="button-container">
       <button class="glow-btn" onclick="location.href='library.html'">📘 Go to Library</button>
-      <button class="glow-btn" onclick="location.href='info.html'">🗓️ View Informations</button>
+      <button class="glow-btn" onclick="location.href='info.html'">🗓️ Informations</button>
       <button class="glow-btn" onclick="location.href='about.html'">💡 About Page</button>
     </div>
   </main>
@@ -256,4 +265,3 @@
   </footer>
 </body>
 </html>
-
