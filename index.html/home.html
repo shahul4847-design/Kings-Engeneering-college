@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 <script>
   window.OneSignal = window.OneSignal || [];
   OneSignal.push(function() {
     OneSignal.init({
-      appId: ""0d96f2fe-26da-4d23-8284-603d76356d72"", // 🔑 Replace with your App ID
+      appId: "0d96f2fe-26da-4d23-8284-603d76356d72", // ✅ Correct App ID format
       promptOptions: {
         slidedown: {
           enabled: true,
@@ -28,9 +28,10 @@
       OneSignal.push(function() {
         OneSignal.showSlidedownPrompt();
       });
-    }, 1000); // show after 1 second
+    }, 1000);
   });
 </script>
+
 
 <!-- Small custom style for popup -->
 <style>
@@ -308,4 +309,5 @@
   </footer>
 </body>
 </html>
+
 
