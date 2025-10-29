@@ -1,36 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "0d96f2fe-26da-4d23-8284-603d76356d72", // ✅ Correct App ID format
-      promptOptions: {
-        slidedown: {
-          enabled: true,
-          actionMessage: "Stay updated with college news!",
-          acceptButtonText: "Allow",
-          cancelButtonText: "Later"
-        }
-      },
-      welcomeNotification: {
-        title: "Kings Engineering College Portal",
-        message: "Thanks for subscribing! 🎓",
-      }
-    });
-  });
 
-  // ⚡️ Show popup FAST when site loads
-  document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(function() {
-      OneSignal.push(function() {
-        OneSignal.showSlidedownPrompt();
-      });
-    }, 1000);
-  });
-</script>
 
 
 <!-- Small custom style for popup -->
@@ -329,5 +300,6 @@
 
 </body>
 </html>
+
 
 
